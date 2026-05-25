@@ -1,0 +1,26 @@
+def calcify():
+    print("----------welcome to calcify- simple calculator---------")
+    print(" supports: Addition(+), Subtraction(-), Multiplication(*),Division(/)")
+    print("Type 'exit' to quit.\n")
+
+    while True:
+
+        expression= input(" Enter Expressions:")
+        
+        if expression.lower()== 'exit':
+            print(" exiting calcify")
+            break
+        try:
+            allowed= '0123456789+-*/.()'
+
+            if all(char in allowed for char in expression):
+                result=eval(expression)
+                print(f'result:{result}')
+            else:
+                print("Error: Invalid Chars")
+
+        except ZeroDivisionError:
+            print(" Error: Division by zero")
+        except Exception as e:
+            print("Error: Inavlid Expression ")
+calcify()                        
